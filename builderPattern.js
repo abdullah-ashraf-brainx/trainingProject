@@ -6,13 +6,6 @@ class Car {
     #model = null
     #productionDate = null
 
-    constructor(color, spoiler, fuelType, model, productionDate) {
-        this.#color = color
-        this.#spoiler = spoiler
-        this.#fuelType = fuelType
-        this.#model = model
-        this.#productionDate = productionDate
-    }
 
     // We define a static Builder class within `Car`
     static Builder = class {
@@ -33,6 +26,16 @@ class Car {
             return this
         }
 
+        setModel(model) {
+            this.#model = model
+            return this
+        }
+
+        setProductionDate(date) {
+            this.#productionDate = date
+            return this
+        }
+
         setSpoiler(spoiler) {
             this.#spoiler = spoiler
             return this
@@ -43,15 +46,7 @@ class Car {
             return this
         }
 
-        setModel(model) {
-            this.#model = model
-            return this
-        }
 
-        setProductionDate(date) {
-            this.#productionDate = date
-            return this
-        }
 
         // when we're done setting arguments, we can call the build method
         // to give us the `Car` instance
@@ -65,6 +60,15 @@ class Car {
             return car
         }
     }
+
+    constructor(color, spoiler, fuelType, model, productionDate) {
+        this.#color = color
+        this.#spoiler = spoiler
+        this.#fuelType = fuelType
+        this.#model = model
+        this.#productionDate = productionDate
+    }
+
 
     toString() {
         return `color: ${this.#color}
