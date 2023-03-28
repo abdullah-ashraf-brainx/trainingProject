@@ -3,12 +3,14 @@ class Car {
     #color = null
     #spoiler = null
     #fuelType = null
+    #model = null
     #productionDate = null
 
-    constructor(color, spoiler, fuelType, productionDate) {
+    constructor(color, spoiler, fuelType, model, productionDate) {
         this.#color = color
         this.#spoiler = spoiler
         this.#fuelType = fuelType
+        this.#model = model
         this.#productionDate = productionDate
     }
 
@@ -19,6 +21,7 @@ class Car {
         #color = null
         #spoiler = null
         #fuelType = null
+        #model = null
         #productionDate = null
 
         // there are four methods to set each of the four
@@ -40,6 +43,11 @@ class Car {
             return this
         }
 
+        setModel(model) {
+            this.#model = model
+            return this
+        }
+
         setProductionDate(date) {
             this.#productionDate = date
             return this
@@ -52,6 +60,7 @@ class Car {
                 this.#color,
                 this.#spoiler,
                 this.#fuelType,
+                this.#model,
                 this.#productionDate)
             return car
         }
@@ -61,6 +70,7 @@ class Car {
         return `color: ${this.#color}
         spoiler: ${this.#spoiler}
         fuel type: ${this.#fuelType}
+        model: ${this.#model}
         production date: ${this.#productionDate}`
     }
 
@@ -71,6 +81,7 @@ const car = new Car.Builder()
     .setFuelType('petrol')
     .setProductionDate(new Date('2021-09-21'))
     .setSpoiler(false)
+    .setModel(2010)
     .build()
 
 console.log(car.toString())
