@@ -26,6 +26,16 @@ class Car {
             return this
         }
 
+        setModel(model) {
+            this.#model = model
+            return this
+        }
+
+        setProductionDate(date) {
+            this.#productionDate = date
+            return this
+        }
+
         setSpoiler(spoiler) {
             this.#spoiler = spoiler
             return this
@@ -36,15 +46,7 @@ class Car {
             return this
         }
 
-        setModel(model) {
-            this.#model = model
-            return this
-        }
 
-        setProductionDate(date) {
-            this.#productionDate = date
-            return this
-        }
 
         // when we're done setting arguments, we can call the build method
         // to give us the `Car` instance
